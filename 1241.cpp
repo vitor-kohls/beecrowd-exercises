@@ -4,27 +4,30 @@
 
 int main() {
 
-    int n;
-    scanf("%d", &n);
+	int n;
+	char a[1010], b[1010];
+	scanf("%d", &n);    
 
-    for(int i = 0; i < n; i++){
 
-        char a[1000], b[1000];
 
-        scanf("%s %s",a, b);
-        //printf("%s\n%s\n",a,b);
+	for(int i = 0; i < n; i++){
+		scanf("%s %s", a, b);
 
-        int b_size = strlen(b);
-        //printf("Tamanho de b é: %d\n",b_size);
-        
-        int start_a = strlen(a) - b_size;
-        // printf("%s\n", a + start_a);
+		if(strlen(a) < strlen(b)){
+			printf("nao encaixa\n");
+			continue;
+		}
 
-        if(strcmp(a + start_a, b) == 0)
-            printf("encaixa\n");
-        else
-            printf("nao encaixa\n");
-    }
+		int size = strlen(b);
+
+		//printf("a[%zu:-1] = %s\n", strlen(a)-size, a + (strlen(a)-size));
+		
+		if(strcmp(a + (strlen(a) - size), b) == 0)
+			printf("encaixa\n");
+		else
+			printf("nao encaixa\n");
+
+	}
 
 
     return 0;
