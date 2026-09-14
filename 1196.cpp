@@ -4,14 +4,14 @@
 
 char get_carac(char c){
 	const char* teclado = "`1234567890-=QWERTYUIOP[]\\ASDFGHJKL;'ZXCVBNM,./";
-	if(c == ' ')
+	if(c == ' ' || c == '\n')
 		return c;
 
 	for(int i = 0; i < strlen(teclado); i++){
 		if(teclado[i] == c)
 			return teclado[i-1];
 	}
-	return 'm';	
+	return c;	
 }
 
 int main() {
