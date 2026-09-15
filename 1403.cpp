@@ -35,6 +35,8 @@ int main() {
 				s_maior = maior;
 				maior = cont;
 			}
+			if(cont > s_maior && cont != maior)
+				s_maior = cont;
 		}
 		//printf("Maior: %d\nS_Maior: %d\n",maior, s_maior);
 		
